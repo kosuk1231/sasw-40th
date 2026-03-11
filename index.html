@@ -410,17 +410,17 @@
     display: flex; align-items: center; gap: 16px;
     margin-bottom: 16px;
   }
-  .award-emoji { font-size: 32px; }
+  .award-emoji { font-size: 40px; }
   .award-card h3 {
     font-family: 'NanumGothic', sans-serif;
-    font-size: 18px; font-weight: 700;
+    font-size: 24px; font-weight: 700;
   }
   .award-card .alt-name {
-    font-size: 12px; color: var(--gold);
+    font-size: 14px; color: var(--gold);
     font-weight: 700;
   }
   .award-detail {
-    font-size: 14px; color: var(--text-dim);
+    font-size: 16px; color: var(--text-dim);
     line-height: 1.8;
   }
   .award-count {
@@ -682,12 +682,12 @@
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="container reveal">
+  <div class="container reveal" style="text-align:center;">
     <div class="section-label">Social Welfare 4.0</div>
     <div class="section-title">서울복지 4.0</div>
-    <div class="section-desc">
-      기술은 새로운 가능성을 열어주고, 윤리는 어디에서 멈춰야 하는지를 질문하게 하며, 전문성은 무엇을 선택하고 결정할 것인지를 판단하게 합니다.<br>
-      사회복지 4.0이 말하고자 하는 핵심은, 그 중심에 언제나 '사람'이 있다는 것입니다.
+    <div class="section-desc" style="margin-left:auto; margin-right:auto; font-size:20px;">
+      기술은 새로운 가능성을 열어주고,<br>윤리는 어디에서 멈춰야 하는지를 질문하게 하며,<br>전문성은 무엇을 선택하고 결정할 것인지를 판단하게 합니다.<br><br>
+      사회복지 4.0이 말하고자 하는 핵심은,<br>그 중심에 언제나 '사람'이 있다는 것입니다.
     </div>
   </div>
   <div class="container">
@@ -843,7 +843,7 @@
           </div>
         </div>
         <p class="award-detail">39세 이하, 경력 3년 이상의 사회복지사로서 현장에서 새로운 가능성을 보여주고 있는 미래 인재를 선정합니다.</p>
-        <span class="award-count">10명</span>
+
       </div>
 
       <div class="award-card reveal">
@@ -855,7 +855,7 @@
           </div>
         </div>
         <p class="award-detail">40대 사회복지사로서 현장의 중심에서 리더십을 발휘하며 서울복지의 미래를 이끌어갈 차세대 리더를 선정합니다.</p>
-        <span class="award-count">10명</span>
+
       </div>
 
       <div class="award-card reveal">
@@ -867,7 +867,7 @@
           </div>
         </div>
         <p class="award-detail">50대 이상 사회복지사로서 오랜 세월 현장에서 헌신하며 서울 사회복지의 기반을 다져 온 분들을 선정합니다.</p>
-        <span class="award-count">10명</span>
+
       </div>
 
       <div class="award-card reveal">
@@ -879,7 +879,7 @@
           </div>
         </div>
         <p class="award-detail">사회복지공동모금회, 월드비전 등 유관단체에 대한 감사패와 협회 강사 중 우수 강사 5명을 선정하여 시상합니다.</p>
-        <span class="award-count">감사패 + 강사상 5명</span>
+
       </div>
     </div>
   </div>
@@ -889,8 +889,25 @@
 <section class="event-section" id="event">
   <div class="container">
     <div class="section-label reveal">Special Event</div>
-    <div class="section-title reveal">사회복지사 40년 역사를 만나다</div>
+    <div class="section-title reveal">서울사회복지사 40년 순간포착</div>
     <div class="divider reveal"></div>
+
+    <div style="text-align:center; margin-bottom:40px;" class="reveal">
+      <a href="https://40th-six.vercel.app/" target="_blank" style="
+        display:inline-block; padding:20px 56px;
+        background:var(--ci); color:var(--deep-navy);
+        font-family:'NanumGothic',sans-serif; font-size:18px; font-weight:800;
+        letter-spacing:1px; border-radius:50px; text-decoration:none;
+        box-shadow:0 0 30px rgba(81,156,144,0.4), 0 4px 20px rgba(0,0,0,0.3);
+        transition:all .3s; animation:btnPulse 2s infinite;
+      ">📸 서울사회복지사 40년의 순간포착 응모하기</a>
+    </div>
+    <style>
+      @keyframes btnPulse {
+        0%, 100% { box-shadow:0 0 30px rgba(81,156,144,0.4), 0 4px 20px rgba(0,0,0,0.3); }
+        50% { box-shadow:0 0 50px rgba(81,156,144,0.6), 0 4px 30px rgba(0,0,0,0.3); }
+      }
+    </style>
 
 
     <!-- Film Strip Slider -->
@@ -961,6 +978,50 @@
     © 2026 서울특별시사회복지사협회. All Rights Reserved.
   </p>
 </footer>
+
+<!-- Privacy Policy Button -->
+<div id="privacyBtn" onclick="document.getElementById('privacyModal').style.display='flex'" style="
+  position:fixed; bottom:24px; right:24px; z-index:999;
+  padding:10px 18px; background:rgba(15,37,41,0.9);
+  border:1px solid rgba(81,156,144,0.25); border-radius:30px;
+  color:var(--text-dim); font-size:12px; cursor:pointer;
+  backdrop-filter:blur(10px); transition:all .3s;
+">🔒 개인정보처리방침</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" onclick="if(event.target===this)this.style.display='none'" style="
+  display:none; position:fixed; inset:0; z-index:1001;
+  background:rgba(0,0,0,0.7); justify-content:center; align-items:center;
+  padding:24px;
+">
+  <div style="
+    max-width:600px; width:100%; max-height:80vh; overflow-y:auto;
+    background:var(--navy); border:1px solid rgba(81,156,144,0.2);
+    border-radius:20px; padding:40px; color:var(--warm-white);
+    font-family:'NanumGothic',sans-serif; line-height:1.8;
+  ">
+    <h2 style="font-size:20px; font-weight:800; margin-bottom:24px;">🔒 개인정보 수집 및 이용 동의</h2>
+    <div style="font-size:13px; color:var(--text-light);">
+      <p style="margin-bottom:16px;">서울특별시사회복지사협회(이하 '협회')는 창립 40주년 기념행사 사전 신청을 위해 아래와 같이 개인정보를 수집·이용합니다.</p>
+      <p style="font-weight:700; color:var(--gold); margin-bottom:8px;">1. 수집 항목</p>
+      <p style="margin-bottom:16px;">성함, 소속, 연락처, 이메일, 이동방법</p>
+      <p style="font-weight:700; color:var(--gold); margin-bottom:8px;">2. 수집 목적</p>
+      <p style="margin-bottom:16px;">행사 사전 신청 처리, 참석 여부 확인, 행사 안내 발송</p>
+      <p style="font-weight:700; color:var(--gold); margin-bottom:8px;">3. 보유 기간</p>
+      <p style="margin-bottom:16px;">행사 종료 후 3개월 이내 파기</p>
+      <p style="font-weight:700; color:var(--gold); margin-bottom:8px;">4. 동의 거부 권리</p>
+      <p style="margin-bottom:24px;">개인정보 수집·이용에 대한 동의를 거부할 권리가 있으며, 동의 거부 시 사전 신청이 제한될 수 있습니다.</p>
+      <p style="font-size:12px; color:var(--text-dim);">문의: 서울특별시사회복지사협회</p>
+    </div>
+    <button onclick="document.getElementById('privacyModal').style.display='none'" style="
+      margin-top:24px; width:100%; padding:14px;
+      border:2px solid var(--ci); background:transparent;
+      color:var(--ci); font-family:'NanumGothic',sans-serif;
+      font-size:14px; font-weight:700; border-radius:50px;
+      cursor:pointer; transition:all .3s;
+    ">닫기</button>
+  </div>
+</div>
 
 <script>
   // Nav scroll effect
