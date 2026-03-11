@@ -988,18 +988,21 @@
     });
   });
 
-  // Film strip generation — photo1.jpg ~ photo13.jpg
-  const photoCount = 13;
+  // Film strip generation — exact filenames
+  const photos = [
+    'photo1.JPG','photo2.JPG','photo3.JPG','photo4.JPG','photo5.JPG','photo6.JPG',
+    'photo7.jpg','photo8.jpg','photo9.jpg','photo10.jpg','photo11.jpg','photo12.jpg','photo13.jpg'
+  ];
   const filmTrack = document.getElementById('filmTrack');
   if (filmTrack) {
     // 2세트 반복으로 무한 스크롤 효과
     for (let set = 0; set < 2; set++) {
-      for (let i = 1; i <= photoCount; i++) {
+      photos.forEach((src, i) => {
         const d = document.createElement('div');
         d.className = 'film-frame';
-        d.innerHTML = `<img src="photo${i}.jpg" alt="사진 ${i}" loading="lazy">`;
+        d.innerHTML = `<img src="${src}" alt="사진 ${i+1}" loading="lazy">`;
         filmTrack.appendChild(d);
-      }
+      });
     }
   }
 </script>
