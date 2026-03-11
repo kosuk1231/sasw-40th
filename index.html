@@ -574,14 +574,69 @@
     .info-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .hero-meta { gap: 20px; }
+    .film-frame { width: 300px; height: 220px; }
+    .film-frame .frame-emoji { font-size: 28px; }
   }
+
+  /* ─── FILM STRIP SLIDER ─── */
+  .film-strip-wrapper { margin-top: 48px; overflow: hidden; border-radius: 12px; }
+  .film-strip { background: #0d0d0d; }
+  .film-sprockets {
+    height: 32px;
+    background:
+      repeating-linear-gradient(90deg,
+        transparent 0px, transparent 14px,
+        rgba(50,50,50,0.5) 14px, rgba(50,50,50,0.5) 26px,
+        transparent 26px, transparent 40px),
+      #0a0a0a;
+  }
+  .film-track-container { padding: 12px 0; overflow: hidden; }
+  .film-track {
+    display: flex; gap: 10px;
+    width: max-content;
+    animation: filmScroll 30s linear infinite;
+  }
+  .film-track:hover { animation-play-state: paused; }
+  .film-frame {
+    flex-shrink: 0; width: 480px; height: 340px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: all 0.4s; position: relative;
+  }
+  .film-frame:hover { border-color: rgba(81,156,144,0.3); }
+  .film-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  @keyframes filmScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ─── MAP ─── */
+  .map-wrapper { margin-top: 40px; text-align: center; }
+  .map-wrapper h4 {
+    font-size: 12px; font-weight: 700; color: var(--gold);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+  }
+  .map-image-container {
+    border: 1px solid rgba(81,156,144,0.15);
+    border-radius: 16px; overflow: hidden;
+    display: inline-block; max-width: 800px; width: 100%;
+  }
+  .map-image { width: 100%; display: block; }
+
+  /* ─── NAV LOGO IMG ─── */
+  .nav-logo a { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 36px; width: auto; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo">서울사회복지사협회</div>
+  <div class="nav-logo"><a href="index.html"><img src="LOGO.png" alt="서울사회복지사협회"></a></div>
   <div class="nav-links">
     <a href="#about">서울복지 4.0</a>
     <a href="#program">프로그램</a>
@@ -589,6 +644,7 @@
     <a href="#awards">포상</a>
     <a href="#event">이벤트</a>
     <a href="#info">행사 안내</a>
+    <a href="register.html" style="color:var(--gold);border:1px solid var(--gold);padding:6px 16px;border-radius:20px;transition:all .3s;">사전 신청</a>
   </div>
 </nav>
 
@@ -747,41 +803,23 @@
     <div class="lecture-cards">
       <div class="lecture-card reveal">
         <div class="lecture-num">01</div>
+        <div class="program-tag" style="margin-bottom:12px;">전문성</div>
         <h3>서울복지 40년, 전문성의<br>역사와 미래 비전</h3>
         <div class="speaker-name">김아래미 교수 · 서울여자대학교 / 협회 제16대 정책위원장</div>
-        <div class="question">40년 전문화의 역사를 어떻게 미래 비전으로 연결할 것인가?</div>
-        <ul class="lecture-topics">
-          <li>전문화 과정의 성찰</li>
-          <li>사회복지의 핵심 가치: 공감, 신뢰, 현장 판단력</li>
-          <li>다가올 10년의 전문직 역량 방향</li>
-        </ul>
-        <div class="message-quote">"서울복지 4.0은 사람을 지키는 혁신이다."</div>
       </div>
 
       <div class="lecture-card reveal">
         <div class="lecture-num">02</div>
+        <div class="program-tag" style="margin-bottom:12px;">기술과 사람</div>
         <h3>디지털 전환 시대,<br>그럼에도 사람</h3>
         <div class="speaker-name">윤석원 대표 · (주)에이아이웍스</div>
-        <div class="question">기술은 사회복지사의 역량을 어떻게 강화하는가?</div>
-        <ul class="lecture-topics">
-          <li>행정과 기록에 묶여 있는 현실</li>
-          <li>디지털 전환 속 사람 중심 재구성 전략</li>
-          <li>상담 기록 요약 · 데이터 기반 사례관리</li>
-        </ul>
-        <div class="message-quote">"기술은 사람을 대신하는 것이 아니라 돕는 도구다."</div>
       </div>
 
       <div class="lecture-card reveal">
         <div class="lecture-num">03</div>
+        <div class="program-tag" style="margin-bottom:12px;">윤리</div>
         <h3>AI 시대, 사회복지의<br>기준을 다시 세우다</h3>
         <div class="speaker-name">황흥기 대표 · 넥스트임팩트</div>
-        <div class="question">AI 시대에 사회복지사는 무엇을 지켜야 하는가?</div>
-        <ul class="lecture-topics">
-          <li>AI의 위험과 한계</li>
-          <li>개인정보 · 알고리즘 편향 · 관계 대체 문제</li>
-          <li>인간 존엄성 · 기술 투명성 · 책임 있는 사용</li>
-        </ul>
-        <div class="message-quote">"기준은 기술이 아니라 우리가 만든다."</div>
       </div>
     </div>
   </div>
@@ -854,14 +892,15 @@
     <div class="section-title reveal">사회복지사 40년 역사를 만나다</div>
     <div class="divider reveal"></div>
 
-    <div class="event-banner reveal">
-      <h3>📸 사진 콘테스트 &amp; 전시</h3>
-      <p>40년간 서울 사회복지 현장의 순간들을 담은 사진 콘테스트를 개최합니다. 선정된 작품은 행사장에서 전시되며, 특별 영상으로도 제작됩니다.</p>
-      <div class="event-tags">
-        <span>📷 사진 공모</span>
-        <span>🖼️ 현장 전시</span>
-        <span>🎬 영상 제작</span>
-        <span>🏆 콘테스트</span>
+
+    <!-- Film Strip Slider -->
+    <div class="film-strip-wrapper reveal">
+      <div class="film-strip">
+        <div class="film-sprockets"></div>
+        <div class="film-track-container">
+          <div class="film-track" id="filmTrack"></div>
+        </div>
+        <div class="film-sprockets"></div>
       </div>
     </div>
   </div>
@@ -891,6 +930,14 @@
         <p>서울 근무 사회복지사<br>300명 내외</p>
       </div>
     </div>
+
+    <!-- 약도 -->
+    <div class="map-wrapper reveal">
+      <h4>📍 오시는 길</h4>
+      <div class="map-image-container">
+        <img src="map.jpg" alt="백범김구기념관 약도" class="map-image">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -902,7 +949,7 @@
     <p style="color: var(--text-dim); margin-bottom: 40px; font-size: 16px;">
       서울복지 4.0의 여정에 함께해 주세요.
     </p>
-    <a href="#" class="cta-btn">사전 신청하기</a>
+    <a href="register.html" class="cta-btn">사전 신청하기</a>
   </div>
 </section>
 
@@ -940,6 +987,21 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+
+  // Film strip generation — photo1.jpg ~ photo13.jpg
+  const photoCount = 13;
+  const filmTrack = document.getElementById('filmTrack');
+  if (filmTrack) {
+    // 2세트 반복으로 무한 스크롤 효과
+    for (let set = 0; set < 2; set++) {
+      for (let i = 1; i <= photoCount; i++) {
+        const d = document.createElement('div');
+        d.className = 'film-frame';
+        d.innerHTML = `<img src="photo${i}.jpg" alt="사진 ${i}" loading="lazy">`;
+        filmTrack.appendChild(d);
+      }
+    }
+  }
 </script>
 
 </body>

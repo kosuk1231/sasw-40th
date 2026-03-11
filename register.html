@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사전 신청 | 서울특별시사회복지사협회 창립 40주년</title>
+<meta name="description" content="서울특별시사회복지사협회 창립 40주년 기념행사 사전 신청">
+<style>
+  @font-face {
+    font-family: 'NanumGothic';
+    src: url('./NanumGothicLight.ttf') format('truetype');
+    font-weight: 300; font-style: normal;
+  }
+  @font-face {
+    font-family: 'NanumGothic';
+    src: url('./NanumGothic.ttf') format('truetype');
+    font-weight: 400; font-style: normal;
+  }
+  @font-face {
+    font-family: 'NanumGothic';
+    src: url('./NanumGothicBold.ttf') format('truetype');
+    font-weight: 700; font-style: normal;
+  }
+  @font-face {
+    font-family: 'NanumGothic';
+    src: url('./NanumGothicExtraBold.ttf') format('truetype');
+    font-weight: 800; font-style: normal;
+  }
+
+  :root {
+    --ci: #519c90;
+    --ci-light: #6DB8AC;
+    --ci-pale: #8FCEC4;
+    --ci-glow: rgba(81, 156, 144, 0.25);
+    --deep-navy: #0B1A1E;
+    --navy: #0F2529;
+    --navy-mid: #163036;
+    --warm-white: #EDF5F3;
+    --cream: #D8E8E4;
+    --text-light: #B8CFC9;
+    --text-dim: #7A9B93;
+    --accent-coral: #D4856A;
+    --accent-gold: #C9A84C;
+    --gold: var(--ci);
+    --gold-light: var(--ci-light);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'NanumGothic', sans-serif;
+    background: var(--deep-navy);
+    color: var(--warm-white);
+    overflow-x: hidden;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(11, 26, 30, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(81, 156, 144, 0.12);
+  }
+  .nav-logo a { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 36px; width: auto; }
+  .nav-back {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 13px; font-weight: 700;
+    transition: color 0.3s;
+  }
+  .nav-back:hover { color: var(--gold); }
+
+  /* ─── PAGE ─── */
+  .register-page {
+    display: flex; justify-content: center; align-items: center;
+    min-height: calc(100vh - 73px);
+    padding: 60px 24px;
+    position: relative;
+  }
+  .register-page::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 30%, rgba(81,156,144,0.06) 0%, transparent 70%),
+      radial-gradient(circle at 80% 80%, rgba(201,168,76,0.03) 0%, transparent 50%);
+  }
+
+  /* ─── CARD ─── */
+  .register-card {
+    position: relative;
+    max-width: 520px; width: 100%;
+    background: rgba(15, 37, 41, 0.8);
+    border: 1px solid rgba(81, 156, 144, 0.15);
+    border-radius: 24px;
+    padding: 48px 40px;
+    backdrop-filter: blur(10px);
+  }
+  .register-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .register-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1px solid var(--gold);
+    border-radius: 40px;
+    font-size: 11px; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .register-header h1 {
+    font-family: 'NanumGothic', sans-serif;
+    font-size: 28px; font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .register-header p {
+    font-size: 14px; color: var(--text-dim);
+  }
+
+  /* ─── FORM ─── */
+  .form-group {
+    margin-bottom: 24px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 12px; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(11, 26, 30, 0.6);
+    border: 1px solid rgba(81, 156, 144, 0.2);
+    border-radius: 12px;
+    color: var(--warm-white);
+    font-family: 'NanumGothic', sans-serif;
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+  .form-group input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(81, 156, 144, 0.15);
+  }
+  .form-group input::placeholder {
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  /* ─── RADIO ─── */
+  .radio-group {
+    display: flex; gap: 16px;
+  }
+  .radio-option {
+    flex: 1;
+    position: relative;
+  }
+  .radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+  }
+  .radio-option .radio-label {
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px;
+    padding: 14px 18px;
+    background: rgba(11, 26, 30, 0.6);
+    border: 1px solid rgba(81, 156, 144, 0.2);
+    border-radius: 12px;
+    font-size: 14px; font-weight: 700;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .radio-option input[type="radio"]:checked + .radio-label {
+    border-color: var(--gold);
+    background: rgba(81, 156, 144, 0.1);
+    color: var(--warm-white);
+    box-shadow: 0 0 0 3px rgba(81, 156, 144, 0.12);
+  }
+  .radio-option .radio-label:hover {
+    border-color: rgba(81, 156, 144, 0.4);
+  }
+
+  /* ─── BUTTON ─── */
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-family: 'NanumGothic', sans-serif;
+    font-size: 15px; font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 8px;
+  }
+  .submit-btn:hover {
+    background: var(--gold);
+    color: var(--deep-navy);
+    box-shadow: 0 0 40px rgba(81, 156, 144, 0.25);
+  }
+  .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* ─── RESULT ─── */
+  .result-msg {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .result-msg .result-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+  .result-msg h2 {
+    font-family: 'NanumGothic', sans-serif;
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .result-msg p {
+    font-size: 14px; color: var(--text-dim);
+    line-height: 1.8;
+  }
+
+  /* ─── BACK LINK ─── */
+  .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 24px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+  }
+  .back-link:hover { color: var(--gold); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(81, 156, 144, 0.08);
+  }
+  footer p { font-size: 12px; color: var(--text-dim); }
+
+  @media (max-width: 600px) {
+    .register-card { padding: 36px 24px; }
+    .radio-group { flex-direction: column; }
+    nav { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="LOGO.png" alt="서울사회복지사협회"></a></div>
+  <a href="index.html" class="nav-back">← 메인으로 돌아가기</a>
+</nav>
+
+<main class="register-page">
+  <div class="register-card" id="registerCard">
+    <div class="register-header">
+      <div class="register-badge">PRE-REGISTRATION</div>
+      <h1>사전 신청</h1>
+      <p>서울특별시사회복지사협회 창립 40주년 기념행사</p>
+    </div>
+
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="name">성함</label>
+        <input type="text" id="name" name="name" placeholder="이름을 입력해 주세요" required>
+      </div>
+
+      <div class="form-group">
+        <label for="affiliation">소속</label>
+        <input type="text" id="affiliation" name="affiliation" placeholder="소속 기관을 입력해 주세요" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">연락처</label>
+        <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>이동방법</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="transport1" name="transport" value="대중교통" required>
+            <label for="transport1" class="radio-label">🚌 대중교통</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="transport2" name="transport" value="차량">
+            <label for="transport2" class="radio-label">🚗 차량</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">신청하기</button>
+    </form>
+
+    <div id="resultArea" style="display:none;"></div>
+
+    <a href="index.html" class="back-link">← 메인 페이지로 돌아가기</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 서울특별시사회복지사협회. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // ★ Google Apps Script 배포 후 아래 URL을 교체하세요
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwvDmYgS94qYYAnGV-6aaFLnTfv5qLQAWzTeJ_nvwOzJxIB8ToHybzUN1vddguviAkn/exec';
+
+  document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = '신청 중...';
+
+    const data = {
+      name: document.getElementById('name').value,
+      affiliation: document.getElementById('affiliation').value,
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
+      transport: document.querySelector('input[name="transport"]:checked').value,
+    };
+
+    try {
+      await fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(data),
+      });
+
+      // no-cors 모드에서는 응답을 읽을 수 없으므로 에러가 없으면 성공으로 처리
+      document.getElementById('registerForm').style.display = 'none';
+      const resultArea = document.getElementById('resultArea');
+      resultArea.style.display = 'block';
+      resultArea.innerHTML = `
+        <div class="result-msg">
+          <div class="result-icon">✅</div>
+          <h2>사전 신청이 완료되었습니다!</h2>
+          <p>감사합니다.<br>행사 관련 안내는 입력하신 연락처로 발송됩니다.</p>
+        </div>
+      `;
+    } catch (err) {
+      const resultArea = document.getElementById('resultArea');
+      resultArea.style.display = 'block';
+      resultArea.innerHTML = `
+        <div class="result-msg">
+          <div class="result-icon">❌</div>
+          <h2>오류가 발생했습니다</h2>
+          <p>잠시 후 다시 시도해 주세요.</p>
+        </div>
+      `;
+      btn.disabled = false;
+      btn.textContent = '신청하기';
+    }
+  });
+</script>
+
+</body>
+</html>
