@@ -11,7 +11,7 @@ const SPREADSHEET_ID = '1xixpkKen7Ozky0carX6ZYhRSF6uRl5wpu10qrpM_o2s';
 // =====================================================
 // 웹 앱: HTML 폼에서 POST 요청을 받아 시트 저장 + 알림톡 발송
 // =====================================================
-const MAX_ROWS = 151; // 헤더(1행) + 150명 = 151행까지 허용
+const MAX_ROWS = 231; // 헤더(1행) + 230명 = 231행까지 허용
 
 function doPost(e) {
   try {
@@ -39,9 +39,10 @@ function doPost(e) {
       nextNumber,       // A: 연번
       data.name,        // B: 성함
       data.affiliation, // C: 소속
-      data.phone,       // D: 연락처
-      data.email,       // E: 이메일
-      data.convenience, // F: 편의제공 조사 (수정됨)
+      data.birthdate,   // D: 생년월일 (추가됨)
+      data.phone,       // E: 연락처
+      data.email,       // F: 이메일
+      data.convenience, // G: 편의제공 조사
     ]);
 
     // 알림톡 발송 (성함, 연락처가 있을 때만)
@@ -114,7 +115,7 @@ function sendAllAlimtalk() {
     return;
   }
 
-  const data   = sheet.getRange(2, 1, lastRow - 1, 6).getValues();
+  const data   = sheet.getRange(2, 1, lastRow - 1, 7).getValues();
   const result = processRows(data);
 
   SpreadsheetApp.getUi().alert(
@@ -136,7 +137,7 @@ function sendSelectedAlimtalk() {
     return;
   }
 
-  const data   = sheet.getRange(selection.getRow(), 1, selection.getNumRows(), 6).getValues();
+  const data   = sheet.getRange(selection.getRow(), 1, selection.getNumRows(), 7).getValues();
   const result = processRows(data);
 
   SpreadsheetApp.getUi().alert(
@@ -152,7 +153,7 @@ function processRows(rows) {
 
   rows.forEach((row, i) => {
     const name   = row[1] ? row[1].toString().trim() : ''; // B: 성함
-    const mobile = row[3] ? row[3].toString().trim() : ''; // D: 연락처
+    const mobile = row[4] ? row[4].toString().trim() : ''; // E: 연락처 (생년월일 D열 추가로 인덱스 4번이 됨)
 
     if (!name || !mobile) {
       result.skip++;
